@@ -1,17 +1,19 @@
+import MergeIntervals from "./problems/MergeIntervals";
+
+
 function App() {
 
   return (
-    <div>
-      <h1>
-        Merge Intervals - React 🚀
-      </h1>
 
-      <p>
-        LeetCode 56 Solution
-      </p>
+    <div>
+
+      <MergeIntervals />
+
     </div>
+
   );
 
 }
+
 
 export default App;
