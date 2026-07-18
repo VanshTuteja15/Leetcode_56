@@ -1,11 +1,12 @@
 import { useState } from "react";
 import mergeIntervals from "../utils/mergeIntervals";
+import IntervalInput from "../components/IntervalInput";
 
 
 function MergeIntervals() {
 
 
-    const [intervals, setIntervals] = useState([
+    const [intervals,setIntervals] = useState([
         [1,3],
         [2,6],
         [8,10],
@@ -13,11 +14,11 @@ function MergeIntervals() {
     ]);
 
 
-    const [mergedResult, setMergedResult] = useState([]);
+    const [mergedResult,setMergedResult] = useState([]);
 
 
 
-    function handleMerge() {
+    function handleMerge(){
 
         const result = mergeIntervals(intervals);
 
@@ -27,18 +28,38 @@ function MergeIntervals() {
 
 
 
+    function addInterval(newInterval){
+
+        setIntervals([
+            ...intervals,
+            newInterval
+        ]);
+
+    }
+
+
+
     return (
 
         <div>
+
 
             <h2>
                 LeetCode 56 - Merge Intervals
             </h2>
 
 
+
+            <IntervalInput 
+                onAddInterval={addInterval}
+            />
+
+
+
             <h3>
-                Input Intervals:
+                Current Intervals:
             </h3>
+
 
 
             {
@@ -60,8 +81,9 @@ function MergeIntervals() {
 
 
             <h3>
-                Result:
+                Merged Result:
             </h3>
+
 
 
             {
@@ -73,6 +95,7 @@ function MergeIntervals() {
 
                 ))
             }
+
 
 
         </div>
