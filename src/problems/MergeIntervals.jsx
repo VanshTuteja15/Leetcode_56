@@ -41,66 +41,87 @@ function MergeIntervals() {
 
     return (
 
-        <div>
+<div className="container">
 
 
-            <h2>
-                LeetCode 56 - Merge Intervals
-            </h2>
+<h2>
+Merge Intervals 🚀
+</h2>
 
 
-
-            <IntervalInput 
-                onAddInterval={addInterval}
-            />
-
-
-
-            <h3>
-                Current Intervals:
-            </h3>
+<p style={{textAlign:"center"}}>
+LeetCode #56 - Calendar Conflict Resolver
+</p>
 
 
 
-            {
-                intervals.map((interval,index)=>(
-
-                    <p key={index}>
-                        [{interval[0]}, {interval[1]}]
-                    </p>
-
-                ))
-            }
+<IntervalInput 
+onAddInterval={addInterval}
+/>
 
 
 
-            <button onClick={handleMerge}>
-                Merge Intervals
-            </button>
+<h3>
+Current Intervals
+</h3>
+
+
+{
+intervals.map((interval,index)=>(
+
+<div 
+className="interval-card"
+key={index}
+>
+
+<span>
+{interval[0]} - {interval[1]}
+</span>
+
+
+</div>
+
+))
+}
 
 
 
-            <h3>
-                Merged Result:
-            </h3>
+<button onClick={handleMerge}>
+
+Merge Intervals
+
+</button>
 
 
 
-            {
-                mergedResult.map((interval,index)=>(
 
-                    <p key={index}>
-                        [{interval[0]}, {interval[1]}]
-                    </p>
-
-                ))
-            }
+<h3>
+Merged Schedule
+</h3>
 
 
 
-        </div>
+{
+mergedResult.map((interval,index)=>(
 
-    );
+<div
+className="result"
+key={index}
+>
+
+{interval[0]} - {interval[1]}
+
+
+</div>
+
+))
+}
+
+
+
+</div>
+
+);
 
 }
 

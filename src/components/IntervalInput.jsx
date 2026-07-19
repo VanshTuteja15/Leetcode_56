@@ -45,31 +45,40 @@ function IntervalInput({ onAddInterval }) {
 
 
 
-    return (
+return (
 
-        <div>
-
-            <h3>
-                Add Interval
-            </h3>
+<div>
 
 
-            <input
-                type="text"
-                placeholder="Example: 1,3"
-                value={input}
-                onChange={(e)=>setInput(e.target.value)}
-            />
+<h3>
+Add New Interval
+</h3>
 
 
-            <button onClick={handleAdd}>
-                Add
-            </button>
+<input
+
+type="text"
+
+placeholder="Example: 5,9"
+
+value={input}
+
+onChange={(e)=>setInput(e.target.value)}
+
+/>
 
 
-        </div>
 
-    );
+<button onClick={handleAdd}>
+
+Add
+
+</button>
+
+
+</div>
+
+);
 
 }
 
